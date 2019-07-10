@@ -4,39 +4,13 @@ import styles from './CommentForm.module.css';
 
 const { TextArea } = Input;
 
-function hasErrors(fieldsError) {
-    return Object.keys(fieldsError).some(field => fieldsError[field]);
-}
-
-class CommentForm extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            email: '',
-            comment: ''
-        };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                console.log('Received values of form: ', values);
-            }
-        });
-    };
-
-    render() {
-        const { getFieldDecorator } = this.props.form;
+const CommentForm = ({ addComment, form}) => {
+        const { getFieldDecorator } = form;
 
         return (
             <div className={styles["login-form"]}>
                 <Form
-                    layout="inline"
-                    onSubmit={this.handleSubmit}>
+                    layout="inline">
                     <Form.Item >
                         {getFieldDecorator('email', {
                             rules: [{ required: true, message: 'Please input your Email!' }],
@@ -62,8 +36,8 @@ class CommentForm extends Component {
                     <Form.Item>
                         <Button
                             type="primary"
-                            htmlType="submit"
-                            className={styles["login-form-button"]} >
+                            onClick={() => addComment(form)}
+                            className={styles["login-form-button"]}>
                             Submit
                         </Button>
                     </Form.Item>
@@ -72,7 +46,6 @@ class CommentForm extends Component {
 >
         );
     }
-}
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(CommentForm);
 export default WrappedNormalLoginForm;

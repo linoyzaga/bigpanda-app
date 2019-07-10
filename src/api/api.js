@@ -14,7 +14,7 @@ function handleSessions(promise) {
 }
 
 class API {
-    static getComments(page) {
+    static getComments(page, filter) {
         const opts = {
             method: 'get',
             headers,
@@ -23,6 +23,10 @@ class API {
                 page
             }
         };
+
+        if (filter) {
+            opts.params.filter = filter;
+        }
 
         return handleSessions(axios(opts));
     }

@@ -1,32 +1,45 @@
 import React, { Component } from 'react';
-import { List, Avatar, Input } from 'antd';
+import { List, Avatar, Input, Button } from 'antd';
+import _ from 'lodash';
+import QueueAnim from 'rc-queue-anim';
 import styles from './CommentView.module.css'
 
 const { Search } = Input;
 
-const CommentView = ({loading, comments, search}) => {
+const CommentView = ({loading, comments, search, filter, loadMore}) => {
     return (
-        <div>
+        <React.Fragment>
             <Search
+                value={filter}
                 placeholder="Filter"
-                onSearch={value => search(value)}
+                onChange={search}
                 className={styles["search-box"]}
             />
-            <List
-                itemLayout="horizontal"
-                loading={loading}
-                dataSource={comments}
-                renderItem={item => (
-                    <List.Item className={styles["list-item"]}>
+            <QueueAnim
+                component={List}
+                componentProps={{ className: styles["list-item"],
+                    itemLayout: 'horizontal',
+                    loading: loading,
+                     }}
+            >
+                {_.map(comments, (item, index) => {
+                    return (<List.Item key={index}>
                         <List.Item.Meta
                             avatar={<Avatar src={item.avatar} />}
                             title={item.email}
-                            description={item.message}
-                        />
-                    </List.Item>
-                )}
-            />
-        </div>
+                            description={item.message} />
+                    </List.Item>)
+                })}
+            </QueueAnim>
+            {comments.length === 0 ?
+                null :
+                <Button
+                onClick={loadMore}
+                className={styles['load-button']}
+            >
+                Load more
+            </Button>}
+        </React.Fragment>
     );
 };
 

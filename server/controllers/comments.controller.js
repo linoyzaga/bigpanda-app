@@ -21,10 +21,13 @@ function buildResponse(comments) {
 
 module.exports.getComments = function getComments(req, res) {
     const page = req.query.page;
+    const filterFromServer = req.query.filter;
 
     if (!page) res.status(400);
 
-    Comments.find({}, fields, function(err, comments){
+    const filter = filterFromServer ? { email: { $regex: filterFromServer, $options: "i" } } : {}
+
+    Comments.find(filter, fields, function(err, comments){
         if (err) {
             console.log('Unable to connect to the mongoDB server. Error:', err);
 

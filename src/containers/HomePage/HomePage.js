@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import crypto from 'crypto';
 import API from '../../api/api';
 import { Row, Col, Typography } from 'antd';
 import styles from './HomePage.module.css';
@@ -13,20 +13,21 @@ class HomePage extends Component {
         super(props);
         this.state = {
             comments: null,
-            filteredComments: null,
             error: null,
+            filter: null,
             page: 0
         };
 
         this.addComment = this.addComment.bind(this);
         this.search = this.search.bind(this);
+        this.createHash = this.createHash.bind(this);
+        this.loadMore = this.loadMore.bind(this);
     }
 
     componentDidMount() {
-        API.getComments(this.state.page).then((res) => {
+        API.getComments(this.state.page, this.state.filter).then((res) => {
             this.setState({
-                comments: res.data,
-                filteredComments: res.data
+                comments: res.data
             });
         }).catch((e) => {
             this.setState({
@@ -35,25 +36,66 @@ class HomePage extends Component {
         });
     }
 
-    addComment(event) {
-        // API.postComment().then((res) => {
-        //     this.setState({
-        //         comments: res.data,
-        //     });
-        // }).catch((e) => {
-        //     this.setState({
-        //         error: e.response.data.message,
-        //     });
-        // });
+    addComment(form) {
+        // TODO validate form
+        const { email, message } = form.getFieldsValue();
+
+        API.postComment(email, message).then((res) => {
+            const comments = [...this.state.comments];
+            comments.push({
+                email,
+                message,
+                avatar: this.createHash(email)
+            });
+
+            this.setState({
+                comments,
+                filter: null
+            }, () => {
+                form.resetFields()
+            });
+        }).catch((e) => {
+            this.setState({
+                error: e.response.data.message,
+            });
+        });
     }
 
-    search(filter) {
-        const comments = _.filter(this.state.comments, (comment) => {
-            return _.includes(comment.email, filter)
-        });
+    createHash(email) {
+        return `https://www.gravatar.com/avatar/${crypto.createHash('md5').update(email).digest("hex")}`
+    }
 
-        this.setState({
-            filteredComments: comments
+    search(event) {
+        const filter = event.target.value === "" ? null : event.target.value;
+
+        API.getComments(this.state.page, filter).then((res) => {
+            this.setState({
+                comments: res.data,
+                filter: filter,
+                page: 0
+            });
+        }).catch((e) => {
+            this.setState({
+                error: e.response.data.message,
+            });
+        });
+    }
+
+    loadMore() {
+        const page = this.state.page + 1;
+
+        API.getComments(page, this.state.filter).then((res) => {
+            const comments = this.state.comments.concat(res.data);
+
+            this.setState({
+                comments,
+                page
+            });
+        }).catch((e) => {
+            debugger
+            this.setState({
+                error: e.response.data.message,
+            });
         });
     }
 
@@ -62,12 +104,16 @@ class HomePage extends Component {
             <React.Fragment>
                 <Row type="flex" justify="center" align="middle" className={styles["home-row"]}>
                     <Col span={9} className={styles["home-col"]}>
-                        <Title>Comments Page</Title>
-                        <CommentForm addComment={this.state.addComment}/>
+                        <Title>Comments</Title>
+                        <CommentForm
+                            addComment={this.addComment}
+                        />
                         <CommentView
-                            comments={this.state.filteredComments ? this.state.filteredComments : []}
-                            loading={!(this.state.filteredComments)}
+                            comments={this.state.comments ? this.state.comments : []}
+                            loading={!(this.state.comments)}
                             search={this.search}
+                            loadMore={this.loadMore}
+                            filter={this.state.filter}
                         />
                     </Col>
                 </Row>
