@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e9f7c0b2-3170-4337-8aa4-fc656cd9f7e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/comments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/comments.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/data/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/data/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommentForm/CommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentForm/CommentForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CommentView/CommentView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentView/CommentView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommentView/CommentView.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentView/CommentView.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,36 +19,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="comments.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/comments.controller.js">
+      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentView.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+                <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+                <element signature="n#!!block;n#search#0;n#HomePage#0" />
+                <element signature="n#!!block;n#onFilterChange#0;n#HomePage#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
+      <file leaf-file-name="comments.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/comments.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-661">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="779">
+              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
-                <element signature="n#!!block;n#createHash#0;n#HomePage#0" />
+                <element signature="e#1615#2128#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,6 +68,8 @@
       <find>hasErrors</find>
       <find>search</find>
       <find>filteredComments</find>
+      <find>createHash</find>
+      <find>debugger</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,20 +84,20 @@
         <option value="$PROJECT_DIR$/src/components/CommentForm/CommentForm.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config-overrides.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/HomePage.module.css" />
         <option value="$PROJECT_DIR$/src/containers/HomePage.js" />
         <option value="$PROJECT_DIR$/src/components/CommentView.js" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/src/components/CommentForm/CommentForm.module.css" />
-        <option value="$PROJECT_DIR$/src/api/api.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/components/CommentView/CommentView.module.css" />
         <option value="$PROJECT_DIR$/src/components/CommentForm/CommentForm.js" />
-        <option value="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" />
         <option value="$PROJECT_DIR$/server/data/db.js" />
         <option value="$PROJECT_DIR$/server/controllers/comments.controller.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/api/api.js" />
         <option value="$PROJECT_DIR$/src/components/CommentView/CommentView.js" />
+        <option value="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" />
       </list>
     </option>
   </component>
@@ -125,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,13 +161,6 @@
               <item name="bigpanda-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigpanda-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CommentView" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bigpanda-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigpanda-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -179,6 +174,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,18 +254,22 @@
       <workItem from="1562762919780" duration="1501000" />
       <workItem from="1562764728826" duration="1558000" />
       <workItem from="1562766940177" duration="1827000" />
-      <workItem from="1562768796941" duration="1350000" />
+      <workItem from="1562768796941" duration="1811000" />
+      <workItem from="1562770638393" duration="1435000" />
+      <workItem from="1562772478091" duration="1547000" />
+      <workItem from="1562774293115" duration="1694000" />
+      <workItem from="1562776103228" duration="480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36352000" />
+    <option name="totallyTimeSpent" value="41969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1953125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1953125" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -279,7 +279,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38437977" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38437977" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -297,33 +297,33 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="65" />
+      <option name="time" value="75" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string />
+        <expression-string>moment().format(&quot;DD.MM.YY HH:mm:ss&quot;)</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>moment().format(&quot;DD.MM.YY HH:mm:ss&quot;);</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>moment().format(&quot;DD-MM-YY HH:mm:ss&quot;);</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>moment().format(&quot;YYYY-MM-DD HH:mm:ss&quot;);</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>moment().format(&quot;HH:mm:ss YYYY-MM-DD&quot;);</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -338,7 +338,7 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>moment(new Date());</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -391,8 +391,11 @@
           <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
-            <element signature="n#!!block;n#createHash#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#onFilterChange#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -424,8 +427,11 @@
           <caret line="35" column="39" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="39" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
-            <element signature="n#!!block;n#createHash#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#onFilterChange#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -499,8 +505,11 @@
           <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
-            <element signature="n#!!block;n#createHash#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#onFilterChange#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -608,20 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CommentForm/CommentForm.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -650,27 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CommentForm/CommentForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -688,31 +662,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
+    <entry file="file://$PROJECT_DIR$/src/components/CommentForm/CommentForm.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-661">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
-            <element signature="n#!!block;n#createHash#0;n#HomePage#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CommentForm/CommentForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-461">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/comments.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        <state relative-caret-position="779">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding>
+            <element signature="e#1615#2128#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+        <state relative-caret-position="209">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#onFilterChange#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>

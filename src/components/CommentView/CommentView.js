@@ -6,13 +6,14 @@ import styles from './CommentView.module.css'
 
 const { Search } = Input;
 
-const CommentView = ({loading, comments, search, filter, loadMore, hasMore}) => {
+const CommentView = ({loading, comments, search, filter, loadMore, onChange}) => {
     return (
         <React.Fragment>
             <Search
                 value={filter}
                 placeholder="Filter"
-                onChange={search}
+                onSearch={search}
+                onChange={onChange}
                 className={styles["search-box"]}
             />
             <QueueAnim

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import crypto from 'crypto';
 import API from '../../api/api';
 import { Row, Col, Typography } from 'antd';
 import styles from './HomePage.module.css';
@@ -20,20 +19,13 @@ class HomePage extends Component {
 
         this.addComment = this.addComment.bind(this);
         this.search = this.search.bind(this);
-        this.createHash = this.createHash.bind(this);
         this.loadMore = this.loadMore.bind(this);
+        this.getComments = this.getComments.bind(this);
+        this.onFilterChange = this.onFilterChange.bind(this);
     }
 
     componentDidMount() {
-        API.getComments(this.state.page, this.state.filter).then((res) => {
-            this.setState({
-                comments: res.data
-            });
-        }).catch((e) => {
-            this.setState({
-                error: e.response.data.message,
-            });
-        });
+        this.getComments();
     }
 
     addComment(form) {
@@ -42,18 +34,13 @@ class HomePage extends Component {
                 const { email, message } = values;
 
                 API.postComment(email, message).then((res) => {
-                    const comments = [...this.state.comments];
-                    comments.push({
-                        email,
-                        message,
-                        avatar: this.createHash(email)
-                    });
-
                     this.setState({
-                        comments,
-                        filter: null
+                        filter: null,
+                        comments: null,
+                        page: 0
                     }, () => {
                         form.resetFields()
+                        this.getComments();
                     });
                 }).catch((e) => {
                     this.setState({
@@ -64,19 +51,21 @@ class HomePage extends Component {
         });
     }
 
-    createHash(email) {
-        return `https://www.gravatar.com/avatar/${crypto.createHash('md5').update(email).digest("hex")}`
-    }
+    getComments(page, filter, cb) {
+        const newPage = page || this.state.page;
+        const newFilter = filter || this.state.filter;
 
-    search(event) {
-        const filter = event.target.value === "" ? null : event.target.value;
+        API.getComments(newPage, newFilter).then((res) => {
 
-        API.getComments(this.state.page, filter).then((res) => {
-            this.setState({
-                comments: res.data,
-                filter: filter,
-                page: 0
-            });
+            if (cb) {
+                cb(res.data);
+            } else {
+                this.setState({
+                    comments: res.data,
+                    filter: newFilter,
+                    page: newPage
+                });
+            }
         }).catch((e) => {
             this.setState({
                 error: e.response.data.message,
@@ -84,20 +73,27 @@ class HomePage extends Component {
         });
     }
 
+    search(filter) {
+        this.getComments(0, filter);
+    }
+
+    onFilterChange(event) {
+        this.setState({
+            filter: event.target.value === "" ? null : event.target.value
+        }, () => {
+            if (!this.state.filter) this.getComments();
+        });
+    }
+
     loadMore() {
         const page = this.state.page + 1;
-
-        API.getComments(page, this.state.filter).then((res) => {
-            const comments = this.state.comments.concat(res.data);
+        
+        this.getComments(page, this.state.filter, (newComments) => {
+            const comments = this.state.comments.concat(newComments);
 
             this.setState({
                 comments,
                 page
-            });
-        }).catch((e) => {
-            debugger
-            this.setState({
-                error: e.response.data.message,
             });
         });
     }
@@ -115,7 +111,7 @@ class HomePage extends Component {
                             comments={this.state.comments ? this.state.comments : []}
                             loading={!(this.state.comments)}
                             search={this.search}
-                            hasMore={this.state.hasMore}
+                            onChange={this.onFilterChange}
                             loadMore={this.loadMore}
                             filter={this.state.filter}
                         />
