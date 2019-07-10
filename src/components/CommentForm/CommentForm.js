@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import React  from 'react';
+import { Form, Input, Button } from 'antd';
 import styles from './CommentForm.module.css';
 
 const { TextArea } = Input;

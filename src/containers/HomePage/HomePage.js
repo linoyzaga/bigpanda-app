@@ -37,27 +37,30 @@ class HomePage extends Component {
     }
 
     addComment(form) {
-        // TODO validate form
-        const { email, message } = form.getFieldsValue();
+        form.validateFields((err, values) => {
+            if (!err) {
+                const { email, message } = values;
 
-        API.postComment(email, message).then((res) => {
-            const comments = [...this.state.comments];
-            comments.push({
-                email,
-                message,
-                avatar: this.createHash(email)
-            });
+                API.postComment(email, message).then((res) => {
+                    const comments = [...this.state.comments];
+                    comments.push({
+                        email,
+                        message,
+                        avatar: this.createHash(email)
+                    });
 
-            this.setState({
-                comments,
-                filter: null
-            }, () => {
-                form.resetFields()
-            });
-        }).catch((e) => {
-            this.setState({
-                error: e.response.data.message,
-            });
+                    this.setState({
+                        comments,
+                        filter: null
+                    }, () => {
+                        form.resetFields()
+                    });
+                }).catch((e) => {
+                    this.setState({
+                        error: e.response.data.message,
+                    });
+                });
+            }
         });
     }
 
@@ -112,6 +115,7 @@ class HomePage extends Component {
                             comments={this.state.comments ? this.state.comments : []}
                             loading={!(this.state.comments)}
                             search={this.search}
+                            hasMore={this.state.hasMore}
                             loadMore={this.loadMore}
                             filter={this.state.filter}
                         />
