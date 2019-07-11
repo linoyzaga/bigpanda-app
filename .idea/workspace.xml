@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9f7c0b2-3170-4337-8aa4-fc656cd9f7e7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/HomePage/HomePage.js" afterDir="false" />
-    </list>
+    <list default="true" id="e9f7c0b2-3170-4337-8aa4-fc656cd9f7e7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,34 +14,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-104">
-              <caret line="84" column="87" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+            <state relative-caret-position="893">
+              <caret line="97" column="9" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="9" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+                <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+                <element signature="n#!!block;n#search#0;n#HomePage#0" />
+                <element signature="n#!!block;n#loadMore#0;n#HomePage#0" />
+                <element signature="n#!!block;n#render#0;n#HomePage#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comments.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controllers/comments.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="51" column="18" lean-forward="true" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-              <folding>
-                <element signature="n#!!block;n#buildResponse#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentView.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommentView.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="-448">
               <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -74,8 +63,11 @@
       <find>filteredComments</find>
       <find>createHash</find>
       <find>debugger</find>
-      <find />
+      <find>React A</find>
       <find>has</find>
+      <find>getComments</find>
+      <find>debugg</find>
+      <find>debug</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,6 +133,11 @@
             <path>
               <item name="bigpanda-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="bigpanda-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bigpanda-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bigpanda-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bigpanda-app" type="b2602c69:ProjectViewProjectNode" />
@@ -255,21 +252,21 @@
       <workItem from="1562776103228" duration="693000" />
       <workItem from="1562825009405" duration="1279000" />
       <workItem from="1562826815733" duration="1553000" />
-      <workItem from="1562828655270" duration="263000" />
+      <workItem from="1562828655270" duration="977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45277000" />
+    <option name="totallyTimeSpent" value="45991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1953125" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32924962" />
       <window_info id="npm" order="2" side_tool="true" />
@@ -283,7 +280,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +377,12 @@
           <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#loadMore#0;n#HomePage#0" />
+            <element signature="n#!!block;n#render#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -412,6 +414,12 @@
           <caret line="35" column="39" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="39" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#loadMore#0;n#HomePage#0" />
+            <element signature="n#!!block;n#render#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -485,6 +493,12 @@
           <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#loadMore#0;n#HomePage#0" />
+            <element signature="n#!!block;n#render#0;n#HomePage#0" />
           </folding>
         </state>
       </provider>
@@ -682,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/comments.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -704,10 +708,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/HomePage/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="84" column="87" selection-start-line="84" selection-start-column="87" selection-end-line="84" selection-end-column="87" />
+        <state relative-caret-position="893">
+          <caret line="97" column="9" selection-start-line="97" selection-start-column="7" selection-end-line="97" selection-end-column="9" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#HomePage#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#HomePage#0" />
+            <element signature="n#!!block;n#addComment#0;n#HomePage#0" />
+            <element signature="n#!!block;n#search#0;n#HomePage#0" />
+            <element signature="n#!!block;n#loadMore#0;n#HomePage#0" />
+            <element signature="n#!!block;n#render#0;n#HomePage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CommentView/CommentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
