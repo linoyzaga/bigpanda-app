@@ -11,8 +11,8 @@ const usersSchema = new mongoose.Schema({
     lastActive: String
 }, {collection: 'users' });
 
-const Comments = mongoose.model('comments', commentsSchema);
-const Users = mongoose.model('users', usersSchema);
+const Comment = mongoose.model('comments', commentsSchema);
+const User = mongoose.model('users', usersSchema);
 
-module.exports.Comments = Comments;
-module.exports.Users = Users;
+module.exports.Comment = Comment;
+module.exports.User = User;

@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const crypto = require('crypto');
 const moment = require('moment');
-const Comments = require('../data/db.js').Comments;
-const Users = require('../data/db.js').Users;
+const Comment = require('../data/db.js').Comment;
+const User = require('../data/db.js').User;
 
 const limit = 10;
 const commentsFields = 'email message';
@@ -36,15 +36,15 @@ module.exports.getComments = function getComments(req, res) {
     const page = req.query.page;
     const filterFromServer = req.query.filter;
 
-    if (!page) res.status(400);
+    if (!page) return res.send(400);
 
     const commentsFilter = filterFromServer ? { email: { $regex: filterFromServer, $options: "i" } } : {}
 
-    Comments.find(commentsFilter, commentsFields, function(err, comments){
+    Comment.find(commentsFilter, commentsFields, function(err, comments){
         if (err) return handleError(res, err);
 
 
-        Users.find({}, usersFields, function(err, users){
+        User.find({}, usersFields, function(err, users){
             if (err) return handleError(res, err);
 
             res.send(buildResponse(comments, users));
@@ -56,17 +56,17 @@ module.exports.postComment = function postComment(req, res) {
     const email = req.body.email;
     const message = req.body.message;
 
-    if (!email || !message) res.status(400);
+    if (!email || !message) res.send(400);
 
-    const newComment = new Comments({ email, message });
+    const newComment = new Comment({ email, message });
 
     newComment.save(function (err) {
         if (err) return handleError(res, err);
      });
 
-    Users.findOneAndUpdate({ email: email }, { lastActive: moment().format("DD.MM.YY HH:mm:ss") }, { upsert: true }, function(err, doc){
+    User.findOneAndUpdate({ email: email }, { lastActive: moment().format("DD.MM.YY HH:mm:ss") }, { upsert: true }, function(err, doc){
         if (err) return handleError(res, err);
     });
 
-    res.status(200).json({});
+    res.send(200);
 };
