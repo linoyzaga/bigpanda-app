@@ -87,7 +87,7 @@ class HomePage extends Component {
 
     loadMore() {
         const page = this.state.page + 1;
-        
+
         this.getComments(page, this.state.filter, (newComments) => {
             const comments = this.state.comments.concat(newComments);
 
