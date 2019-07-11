@@ -26,6 +26,12 @@ function buildResponse(comments, users) {
     });
 }
 
+function handleError(res, err) {
+    console.log(err);
+
+    return res.send(500, { error: 'Ops, something went wrong!' });
+}
+
 module.exports.getComments = function getComments(req, res) {
     const page = req.query.page;
     const filterFromServer = req.query.filter;
@@ -35,11 +41,11 @@ module.exports.getComments = function getComments(req, res) {
     const commentsFilter = filterFromServer ? { email: { $regex: filterFromServer, $options: "i" } } : {}
 
     Comments.find(commentsFilter, commentsFields, function(err, comments){
-        if (err) return res.send(500, { error: err });
+        if (err) return handleError(res, err);
 
 
         Users.find({}, usersFields, function(err, users){
-            if (err) return res.send(500, { error: err });
+            if (err) return handleError(res, err);
 
             res.send(buildResponse(comments, users));
         });
@@ -55,11 +61,11 @@ module.exports.postComment = function postComment(req, res) {
     const newComment = new Comments({ email, message });
 
     newComment.save(function (err) {
-        if (err) return res.send(500, { error: err });
+        if (err) return handleError(res, err);
      });
 
     Users.findOneAndUpdate({ email: email }, { lastActive: moment().format("DD.MM.YY HH:mm:ss") }, { upsert: true }, function(err, doc){
-        if (err) return res.send(500, { error: err });
+        if (err) return handleError(res, err);
     });
 
     res.status(200).json({});

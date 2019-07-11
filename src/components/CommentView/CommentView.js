@@ -7,6 +7,27 @@ import styles from './CommentView.module.css'
 const { Search } = Input;
 
 const CommentView = ({loading, comments, search, filter, loadMore, onChange}) => {
+    const buildList = (comments) => {
+        return _.map(comments, (item, index) => {
+            return (
+                <List.Item key={index}>
+                    <List.Item.Meta
+                        avatar={
+                            (<Popover
+                                    title={item.email}
+                                    content={`Last Active: ${item.lastActive}`}
+                                    trigger="click"
+                                >
+                                    <Avatar src={item.avatar}/>
+                                </Popover>
+                            )}
+                        title={item.email}
+                        description={item.message} />
+                </List.Item>
+            )
+        })
+    }
+
     return (
         <React.Fragment>
             <Search
@@ -23,24 +44,7 @@ const CommentView = ({loading, comments, search, filter, loadMore, onChange}) =>
                     loading: loading,
                      }}
             >
-                {_.map(comments, (item, index) => {
-                    return (
-                        <List.Item key={index}>
-                            <List.Item.Meta
-                                avatar={
-                                    (<Popover
-                                        title={item.email}
-                                        content={item.lastActive}
-                                        trigger="click"
-                                    >
-                                        <Avatar src={item.avatar}/>
-                                    </Popover>
-                                    )}
-                                title={item.email}
-                                description={item.message} />
-                        </List.Item>
-                    )
-                })}
+                {buildList(comments)}
             </QueueAnim>
             {comments.length === 0 ?
                 null :
