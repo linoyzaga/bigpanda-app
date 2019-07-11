@@ -25,7 +25,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        this.getComments();
+        this.getComments(this.state.page, this.state.filter);
     }
 
     addComment(form) {
@@ -40,7 +40,7 @@ class HomePage extends Component {
                         page: 0
                     }, () => {
                         form.resetFields()
-                        this.getComments();
+                        this.getComments(this.state.page, this.state.filter);
                     });
                 }).catch((e) => {
                     this.setState({
@@ -52,18 +52,15 @@ class HomePage extends Component {
     }
 
     getComments(page, filter, cb) {
-        const newPage = page || this.state.page;
-        const newFilter = filter || this.state.filter;
-
-        API.getComments(newPage, newFilter).then((res) => {
+        API.getComments(page, filter).then((res) => {
 
             if (cb) {
                 cb(res.data);
             } else {
                 this.setState({
                     comments: res.data,
-                    filter: newFilter,
-                    page: newPage
+                    filter,
+                    page
                 });
             }
         }).catch((e) => {
@@ -81,7 +78,7 @@ class HomePage extends Component {
         this.setState({
             filter: event.target.value === "" ? null : event.target.value
         }, () => {
-            if (!this.state.filter) this.getComments();
+            if (!this.state.filter) this.getComments(this.state.page, this.state.filter);
         });
     }
 
